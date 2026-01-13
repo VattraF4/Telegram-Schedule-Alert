@@ -64,10 +64,10 @@ foreach ($schedules as $schedule) {
             </ol><br>
 
             <h3>Cron Job Setup:</h3>
-                <pre  style="margin-left: -120px">
-                        # Run every minute
-                        * * * * * /usr/bin/php /path/to/telegram-schedule-bot/cron/check_schedule.php
-                </pre>
+            <pre>
+                    # Run every minute
+                    * * * * * /usr/bin/php /path/to/telegram-schedule-bot/cron/check_schedule.php
+            </pre>
 
             <h3>Configuration:</h3>
             <p>Edit <code>config/config.php</code> to set your bot token and group chat ID.</p>
