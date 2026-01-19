@@ -9,7 +9,7 @@ function checkAndSendAlerts() {
     $alertsSent = [];
     $schedulesToDelete = [];
     
-    foreach ($schedules as $index => $schedule) {
+    foreach ($schedules as  $schedule) {
         $scheduleDate = $schedule['date'];
         $eventTitle = $schedule['title'];
         $eventDesc = $schedule['description'] ?? '';
@@ -47,7 +47,14 @@ function checkAndSendAlerts() {
         }
         
         // Check if schedule date has passed
-        if ($date1 > $date2) {
+        if ($date1 >= $date2) {
+            $message = "⏰ REMINDER: TODAY MEET THE EVENT!\n";
+            $message .= "📅 Event: <b>{$eventTitle}</b>\n";
+            $message .= "📆 Date: {$scheduleDate}\n";
+            if ($eventDesc) {
+                $message .= "📝 Details: {$eventDesc}\n";
+            }
+            sendTelegramMessage(GROUP_CHAT_ID, $message);
             $schedulesToDelete[] = $schedule['id'];
         }
     }
