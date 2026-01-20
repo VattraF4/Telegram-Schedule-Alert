@@ -34,8 +34,8 @@ function checkAndSendAlerts() {
         }
         
         // Check if it's exactly 2 days before
-        if (ALERT_2_DAYS_BEFORE && $daysDifference == 2) {
-            $message = "⏰ REMINDER: 2 DAYS LEFT!\n";
+        if (ALERT_3_DAYS_BEFORE && $daysDifference == 3) {
+            $message = "⏰ REMINDER: 3 DAYS LEFT!\n";
             $message .= "📅 Event: <b>{$eventTitle}</b>\n";
             $message .= "📆 Date: {$scheduleDate}\n";
             if ($eventDesc) {
